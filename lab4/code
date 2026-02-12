@@ -1,0 +1,22 @@
+import pandas as pd 
+import numpy as np 
+data=pd.read_csv('/content/enjoysport.csv')
+attribute=np.array(data)[:,-1]
+target=np.array(data)[:,-1]
+print("Training data:\n")
+print(data)
+def train(att,tar):
+    for i,val in enumerate(tar):
+        if val=='yes':
+            specifuc_h=att[i].copy()
+            break
+    for i,val in enumerate(att):
+        if tar[i]=='yes':
+            for X in range(len(specific_h)):
+                if val[X]!=specific_h[X]:
+                    specific_h[X]='?'
+        else:
+            pass
+        return specific_h
+    print("\n")
+    print(train(attribute,target))
